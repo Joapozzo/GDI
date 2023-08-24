@@ -29,20 +29,35 @@ namespace GDI
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnDibujar = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // btnDibujar
+            // 
+            this.btnDibujar.Location = new System.Drawing.Point(12, 12);
+            this.btnDibujar.Name = "btnDibujar";
+            this.btnDibujar.Size = new System.Drawing.Size(112, 100);
+            this.btnDibujar.TabIndex = 0;
+            this.btnDibujar.Text = "Dibujar";
+            this.btnDibujar.UseVisualStyleBackColor = true;
+            this.btnDibujar.Click += new System.EventHandler(this.btnDibujar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(742, 479);
+            this.ClientSize = new System.Drawing.Size(484, 461);
+            this.Controls.Add(this.btnDibujar);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Primer Dibujo";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnDibujar;
     }
 }
 

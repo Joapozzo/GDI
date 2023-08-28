@@ -10,25 +10,21 @@ using System.Windows.Forms;
 
 namespace GDI
 {
-    public partial class frmArkanoid : Form
+    public partial class Arkanoid : Form
     {   
         Pen lapiz = new Pen(Color.Blue);
         Graphics lienzo;
-        public frmArkanoid()
+        public Arkanoid()
         {
             InitializeComponent();
-        }
-
-        private void frmArkanoid_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             btnJugar.Hide();
-            lienzo = contenedor.CreateGraphics();
-            lienzo.DrawRectangle(lapiz, 230, 320, 150, 70);
+            picNave.Show();
+            //lienzo = contenedor.CreateGraphics();
+            //lienzo.DrawRectangle(lapiz, 230, 320, 150, 70);
             temporizador.Enabled = true;
         }
 
@@ -36,25 +32,19 @@ namespace GDI
         Random aleatorioX = new Random();
         Random aleatorioY = new Random();
 
-        private void frmArkanoid_KeyPress(object sender, KeyPressEventArgs e)
+        private void Arkanoid_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void frmArkanoid_KeyDown(object sender, KeyEventArgs e)
-        {
-            //if (e.KeyChar = Left)
-            //{
-            //    MessageBox.Show("Test");
-            //}
+            picNave.Hide();
         }
 
         private void temporizador_Tick(object sender, EventArgs e)
         {
             ejeX = aleatorioX.Next(0, 500);
-            ejeX = aleatorioY.Next(0, 500);
 
-            lienzo.DrawRectangle(lapiz, ejeX, ejeY, 150, 700);
+            picNave.Location = new Point(ejeX, 376);
+
+            //lienzo = new Point(ejeX, 400);
+            //lienzo.DrawRectangle(lapiz, ejeX, ejeY, 150, 700);
 
         }
     }

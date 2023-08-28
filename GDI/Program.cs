@@ -16,7 +16,7 @@ namespace GDI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmArkanoid());
+            Application.Run(new frmArkanoidLVL2());
         }
     }
 }
